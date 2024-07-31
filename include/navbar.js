@@ -30,11 +30,11 @@ const Navbar = () => {
                 <div className="NavList">
                     <ul className="NavListMenu">
                         <li><Link href="/" ><a>HOME</a></Link></li>
-                        <li><Link href="/Category/techNews" ><a>NEWS</a></Link></li>
-                        <li><Link href="/Category/techInfo" ><a>TECH</a></Link></li>
-                        <li><Link href="/Category/automobiles" ><a>AUTOMOBILES</a></Link></li>
-                        <li><Link href="/Category/finance" ><a>FINANCE</a></Link></li>
-                        <li><Link href="/Category/programming" ><a>PROGRAMMING</a></Link></li>
+                        <li><Link href="/Category/News" ><a>NEWS</a></Link></li>
+                        <li><Link href="/Category/Tech" ><a>TECH</a></Link></li>
+                        <li><Link href="/Category/Automobiles" ><a>AUTOMOBILES</a></Link></li>
+                        <li><Link href="/Category/Finance" ><a>FINANCE</a></Link></li>
+                        <li><Link href="/Category/Programming" ><a>PROGRAMMING</a></Link></li>
                     </ul>
                 </div>
             </div>
@@ -43,11 +43,11 @@ const Navbar = () => {
             <div className="NavListMob">
                 <ul className="NavListMenuMob"  onClick={ sidebarStatusHandler } >
                     <li><Link href="/" ><a>HOME</a></Link></li>
-                    <li><Link href="/Category/techNews" ><a>NEWS</a></Link></li>
-                    <li><Link href="/Category/techInfo" ><a>TECH</a></Link></li>
-                    <li><Link href="/Category/automobiles" ><a>AUTOMOBILES</a></Link></li>
-                    <li><Link href="/Category/finance" ><a>FINANCE</a></Link></li>
-                    <li><Link href="/Category/programming" ><a>PROGRAMMING</a></Link></li>
+                    <li><Link href="/Category/News" ><a>NEWS</a></Link></li>
+                    <li><Link href="/Category/Tech" ><a>TECH</a></Link></li>
+                    <li><Link href="/Category/Automobiles" ><a>AUTOMOBILES</a></Link></li>
+                    <li><Link href="/Category/Finance" ><a>FINANCE</a></Link></li>
+                    <li><Link href="/Category/Programming" ><a>PROGRAMMING</a></Link></li>
                 </ul>
             </div>
         </div>

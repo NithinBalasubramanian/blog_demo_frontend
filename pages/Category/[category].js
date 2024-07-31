@@ -4,6 +4,7 @@ import Link from 'next/link'
 import axios from '../../component/apiInstance/Instance_API';
 import moment from 'moment';
 import { useRouter } from 'next/router'
+import MetaComponent from '../../component/MetaComponent.js/MetaComponent';
 
 const Category = () => {
 
@@ -43,43 +44,7 @@ const Category = () => {
                     </div>
                 </div>
             </div>
-            <Head>
-                <title>Techidiots - The collection of Tech for Techies</title>
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                <meta charset="utf-8" />
-                <meta name="description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
-               
-                <link rel="icon" href="/favicon.ico"/>
-                <meta property="og:image" content= {`${process.env.NEXT_PUBLIC_BASE_URL }/techidiots.png`} />
-                <meta property="og:url" content= { process.env.NEXT_PUBLIC_BASE_URL  } />
-                <meta property="og:site_name" content= { process.env.NEXT_PUBLIC_BASE_URL  } />
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="TechIdiots - The Collections of Tech for Techies"/>
-                <meta property="og:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
-
-                <meta property="twitter:url" content= { process.env.NEXT_PUBLIC_BASE_URL  }  />
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:image" content= { `${ process.env.NEXT_PUBLIC_BASE_URL  }/techidiots.png`} />
-                <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
-                <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
-            
-                <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-                <meta name="theme-color" content="#000000"/>
-                <meta name="robots" content="index,follow"/>
-                <meta name="author" content="Techidiots - Pingifinit"/>
-                <meta name="publisher" content="Techidiots - Pingifinit"/>
-                <meta name="owner" content="Techidiots - Pingifinit"/>
-                <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
-                
-                <meta name="facebook-domain-verification" content="q5r5o0qa0x8ohoxlhfp1xf5itrgkm7" />
-                    
-                <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-                <link rel="manifest" href="/site.webmanifest" />
-                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-                <meta name="msapplication-TileColor" content="#da532c" />
-            </Head>
+            <MetaComponent />
             <div className="contMain">
                 <div className="homeListContainer">
                 <div className="row">
@@ -97,7 +62,7 @@ const Category = () => {
                                                     <small>{ moment(itm.createdOn).fromNow() }</small>
                                                 </div>
                                                 <img src={itm.imgUrl} alt={ itm.title } loading="lazy"  width="100%"  /> 
-                                                <p>{ itm.preheading } </p>
+                                                <p>{ itm.blogPreview } </p>
                                             </a>
                                         </Link>
                                     </div>    
@@ -129,7 +94,7 @@ const Category = () => {
                             }
                         </div>
                         <div className="col-md-12 midAbout">
-                            <h1> Techidiots / { category }</h1>
+                            <h1> Blog / { category }</h1>
                         </div>
                     </div>
                     <div className="row">
@@ -145,7 +110,7 @@ const Category = () => {
                                                 - From {itm.auther} 
                                             </div>
                                             <h4>{ itm.title }</h4>
-                                            <p>{ itm.preheading } </p>
+                                            <p>{ itm.blogPreview } </p>
                                           </a>
                                         </Link>
                                     </div>                        
@@ -163,7 +128,7 @@ const Category = () => {
                                             - From {itm.auther} 
                                             </div>
                                             <h4>{ itm.title }</h4>
-                                            <p>{ itm.preheading } </p>
+                                            <p>{ itm.blogPreview } </p>
                                            </a>
                                         </Link>
                                     </div>

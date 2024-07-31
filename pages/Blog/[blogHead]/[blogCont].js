@@ -17,29 +17,10 @@ import MetaComponent from '../../../component/MetaComponent.js/MetaComponent';
 
 const BlogHead = (props) => {
 
-    console.log(props);
-
     const router = useRouter();
 
     let { blogHead , blogCont } = router.query;
-
-    const [ datas , setDatas ] = useState([]);
-
     const [ recent , setRecent ] = useState([]);
-    
-     let [ FetchStatus , setFetchStatus ] = useState(false);
-    
-    // const Fetchdata = () => {
-    //     axios.get('/view/'+blogCont)
-    //     .then( res => {
-    //         setDatas(res.data);
-    //         setFetchStatus(false);
-    //         FetchdataNot();
-    //     })
-    //     .catch( err => {
-    //         console.log(err);
-    //     })
-    // }
 
     const FetchdataNot = () => {
         axios.get('/recentCategory/'+blogHead+'/'+blogCont)
@@ -52,12 +33,10 @@ const BlogHead = (props) => {
     }
 
     useEffect(()=>{
-        // setFetchStatus(true);
         window.scrollTo(0, 0);
-        // Fetchdata();
-        // const timer = setTimeout(() => {
-        //     FetchdataNot();
-        //   }, 2000);
+        const timer = setTimeout(() => {
+            FetchdataNot();
+          }, 2000);
     }, [blogCont]) 
 
     let url = process.env.NEXT_PUBLIC_BASE_URL;
@@ -112,7 +91,7 @@ const BlogHead = (props) => {
                                     <a href={ `https://www.facebook.com/sharer/sharer.php?u=${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Facebook">
                                         <FaFacebook style={{ fontSize : '25px', margin : '15px 25px' , color : '#4267B2'}} />
                                     </a>
-                                    <a href={ `mailto:?subject=Checkout this blog at Techidiots&body=${itm.title}  ${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Mail">
+                                    <a href={ `mailto:?subject=Checkout this blog at Blogs&body=${itm.title}  ${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Mail">
                                         <AiOutlineMail style={{ fontSize : '25px', margin : '15px 25px' , color : '#FF5A5F'}} />
                                     </a>
                                 </div>
@@ -126,7 +105,7 @@ const BlogHead = (props) => {
                             
                               </div>
                               <div className="preheading">
-                                  <p style={ {padding:'10px 0px',margin:'0px'} }>{itm.preheading}</p>
+                                  <p style={ {padding:'10px 0px',margin:'0px'} }>{itm.blogPreview}</p>
                               </div>
                               <div className="byAuth">
                                   - by {itm.auther}  
@@ -136,43 +115,11 @@ const BlogHead = (props) => {
                               <img src={itm.imgUrl} loading="lazy" className="blogImgMain" alt={ itm.title } width="100%" height="auto" /> 
 
                                <div className="contentDisp">
-                                  <p className="paraMainCont">{itm.blog}</p>
-                                     { (itm.subPara) ? 
-                                         itm.subPara.map((sub_itm,s_k) => {
-                                          if(sub_itm.SubHeading === 'head'){
-                                              return (
-                                                  <h2  key={s_k} >{sub_itm.Content}</h2>
-                                              ) 
-                                          }else if(sub_itm.SubHeading === 'sub_head'){
-                                              return (
-                                                  <h2  key={s_k} >{sub_itm.Content}</h2>
-                                              ) 
-                                          }else if(sub_itm.SubHeading === 'sub_img'){
-                                              return (
-                                                  <img loading="lazy" src={sub_itm.Content} alt={itm.title} width="100%" height="auto" className="sub_img" />
-                                              ) 
-                                          }else if(sub_itm.SubHeading === 'tweet'){
-                                              return (
-                                                  <div className="tweet">
-                                                   <TweetEmbed  id={ sub_itm.Content } />
-                                                  </div>
-                                              ) 
-                                          }else if(sub_itm.SubHeading === 'bold'){
-                                              return (
-                                                  <p><b  key={s_k} >{sub_itm.Content}</b></p>
-                                              ) 
-                                          }else{
-                                              return (
-                                                  <p  className="paraSubCont" key={s_k} >{sub_itm.Content}</p>
-                                              ) 
-                                          }
-                                      })
-                                     : null 
-                                     }
-
+                                  <p className="paraMainCont">{itm.blogBrief}</p>
+                                  <div className="paraSubCont" dangerouslySetInnerHTML={{ __html: itm.blogContent }} />
 
                                     { itm.reference &&
-                                        <p className="reference"> Reference : { itm.reference } </p>
+                                        <p className="reference"> Reference : <a href={itm.reference} target="_blank" >{ itm.reference } </a></p>
                                     }
                               </div>
                             </div>
@@ -196,7 +143,7 @@ const BlogHead = (props) => {
                                        { itm.category }
                                       </div>
                                       <h3>{itm.title}</h3>
-                                      <p>{itm.preheading}</p>
+                                      <p>{itm.blogPreview}</p>
                                     </div>
                                 </a>
                                 </Link>
@@ -217,7 +164,7 @@ export const getServerSideProps = async(context) => {
     // Fetch data from external API
 
     let {  blogCont } = context.query;
-  
+
     const res = await axios.get('/view/'+blogCont)
                 .then((res) => {
                     return res.data;

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const Instance_API = axios.create(
     { 
-        baseURL : 'https://mern-blog-xubc.onrender.com/Api/',
+        baseURL : 'http://localhost:8080/api/',
     }
 )
 

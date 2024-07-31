@@ -25,6 +25,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/Blog/[blogHead]/[blogCont].js"
     ],
+    "/Category/[category]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Category/[category].js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

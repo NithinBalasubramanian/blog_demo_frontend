@@ -8,7 +8,7 @@ const Footer = () => {
         <footer>
           <div className="footer_container">
            
-            <p className="copyCont">2020 - { Year } - &copy; BLOG || All Right Reserved  <br/>
+            <p className="copyCont">{ Year } - &copy; BLOG || All Right Reserved  <br/>
               </p>
           </div>
         </footer>

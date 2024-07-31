@@ -312,7 +312,36 @@ footer{
 .contMain{
   width:100%;
   margin:0px;
-  min-height:700px;
+  min-height:95vh;
+
+  .blogForm {
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 120px;
+
+    .formField {
+      width: 100%;
+      padding: 20px;
+
+      .formFieldLabel {
+        display: block;
+      }
+
+      .formFieldInput {
+        width: 90%;
+        padding: 10px;
+        outline: none;
+      }
+
+      .submitButton {
+        width: 90%;
+        padding: 10px;
+        background-color: #3f424a;
+        color: #fff;
+        outline: none;
+      }
+    }
+  }
   
   .homeListContainer{
     width:80%;
@@ -1099,6 +1128,12 @@ p{
   .paraSubCont{
     margin:5px 0px;
     text-indent:0px;
+    color:#4d4752;
+    text-align:justify;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size:18px;
+    font-family: 'Crimson Text', serif;
   }
   
   .reference{
@@ -1603,6 +1638,8 @@ p{
     }
 
     .contMain{
+      min-height: 95vh;
+
        .homeListContainer{
           width:90%;
 
