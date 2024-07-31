@@ -1,0 +1,40 @@
+{
+  "name": "blog-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^31.1.0",
+    "@ckeditor/ckeditor5-react": "^3.0.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "ckeditor5": "^31.1.0",
+    "moment": "^2.29.1",
+    "next": "^12.0.4",
+    "next-pwa": "^5.2.24",
+    "next-seo": "^4.28.1",
+    "next-sitemap": "^1.6.179",
+    "react": "17.0.2",
+    "react-adsense": "^0.1.0",
+    "react-dom": "17.0.2",
+    "react-draft-wysiwyg": "^1.14.7",
+    "react-gist": "^1.2.2",
+    "react-icons": "^4.2.0",
+    "react-player": "^2.9.0",
+    "react-quill": "^2.0.0-beta.4",
+    "react-share": "^4.4.0",
+    "react-slick": "^0.28.1",
+    "react-tweet-embed": "^1.2.2",
+    "sass": "^1.32.8",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@babel/helper-compilation-targets": "^7.16.3",
+    "@types/react": "^17.0.27",
+    "typescript": "^4.4.3"
+  }
+}
