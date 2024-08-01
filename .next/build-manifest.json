@@ -20,6 +20,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
+    "/AddBlog": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/AddBlog.js"
+    ],
     "/Blog/[blogHead]/[blogCont]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

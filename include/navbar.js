@@ -1,8 +1,7 @@
-import React , { useState , useEffect } from 'react';
+import React , { useState  } from 'react';
 import { BiMenuAltLeft } from 'react-icons/bi';
 import Link from 'next/link'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import router from 'next/router';
 import { useRouter } from 'next/router';
 
 const Navbar = () => {
@@ -35,6 +34,7 @@ const Navbar = () => {
                         <li><Link href="/Category/Automobiles" ><a>AUTOMOBILES</a></Link></li>
                         <li><Link href="/Category/Finance" ><a>FINANCE</a></Link></li>
                         <li><Link href="/Category/Programming" ><a>PROGRAMMING</a></Link></li>
+                        <li><Link href="/AddBlog" ><a>NEW BLOG</a></Link></li>
                     </ul>
                 </div>
             </div>
@@ -48,6 +48,7 @@ const Navbar = () => {
                     <li><Link href="/Category/Automobiles" ><a>AUTOMOBILES</a></Link></li>
                     <li><Link href="/Category/Finance" ><a>FINANCE</a></Link></li>
                     <li><Link href="/Category/Programming" ><a>PROGRAMMING</a></Link></li>
+                    <li><Link href="/AddBlog" ><a>NEW BLOG</a></Link></li>
                 </ul>
             </div>
         </div>
